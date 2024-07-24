@@ -1,0 +1,12 @@
+[Unit]
+Description=Devops FetchService
+After=network.target
+
+[Service]
+ExecService=/home/abdulfattah/HNG-INTERNSHIP/STAGE6/devopsfetch.sh -p -d -l -n
+Restart=always
+User=nobody
+Group=nogroup
+
+[Install]
+WantedBy=multi-user.target
