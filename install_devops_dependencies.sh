@@ -10,28 +10,28 @@ setup_systemd_service(){
     echo "Setting Up systemd service..."
 
     sudo bash -c 'cat <<EOF > /etc/systemd/system/devopsfetch.service
-        [Unit]
-        Description=Devops FetchService
-        After=network.target
-        [Service]
-        ExecService=/home/abdulfattah/HNG-INTERNSHIP/STAGE6/devopsfetch.sh -p -d -l -n
-        Restart=always
-        User=nobody
-        Group=nogroup
+[Unit]
+Description=Devops FetchService
+After=network.target
 
-        [Install]
-        WantedBy=multi-user.target
-        EOF'
+[Service]
+ExecStart=/home/abdulfattah/HNG-INTERNSHIP/STAGE6/devopsfetch.sh
+User=root
+Restart=always
 
-    sudo systemctl daemon-reload
-    sudo systemctl enable devopsfetch.service
-    sudo systemctl start devopsfetch.servive
+[Install]
+WantedBy=multi-user.target
+EOF'
 
-    echo "Systemd service set up and stared."
+sudo systemctl daemon-reload
+sudo systemctl enable devopsfetch.service
+sudo systemctl start devopsfetch.service
+
+echo "Systemd service set up and stared."
 }
 
 main(){
-    install_dependencies
+    #install_dependencies
     setup_systemd_service
 }
 

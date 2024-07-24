@@ -143,7 +143,9 @@ main(){
             fi
             ;;
             -h | --help)
+            shift
             show_help
+            shift
             ;;
             *)
             show_help
