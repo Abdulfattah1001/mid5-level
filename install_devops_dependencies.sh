@@ -32,7 +32,7 @@ echo "Systemd service set up and stared."
 }
 
 main(){
-    #install_dependencies
+    install_dependencies
     setup_systemd_service
 }
 
