@@ -15,9 +15,10 @@ Description=Devops FetchService
 After=network.target
 
 [Service]
+WorkingDirectory=/home/abdulfattah/HNG-INTERNSHIP/STAGE6
 ExecStart=/home/abdulfattah/HNG-INTERNSHIP/STAGE6/devopsfetch.sh
-User=root
 Restart=always
+Restart-Sec=15
 
 [Install]
 WantedBy=multi-user.target
